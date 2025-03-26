@@ -58,3 +58,12 @@ MERGE BRANCHES:
 git checkout main
 git merge task-3-undo-changes
 git push origin main
+
+
+
+
+**Differences**
+
+git reset HEAD~1	   Moves the branch pointer back but keeps changes unstaged
+git reset --hard HEAD~1	   Removes the commit and its changes completely
+git revert HEAD	           Creates a new commit that undoes the last commit safely, this is the safest option, as the newer changes are removed and older ones are made as a new commit
