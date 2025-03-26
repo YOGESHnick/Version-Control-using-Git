@@ -1,0 +1,60 @@
+mkdir task-3
+cd task-3
+
+
+NEW BRANCH:
+
+git checkout -b task-3-undo-changes
+touch commands.txt
+
+echo "Initial content" > undo.txt
+git add undo.txt
+git commit -m "feat: add undo.txt file"
+
+
+UNWANTED CHANGES:
+
+echo "Some unwanted changes" >> undo.txt
+cat undo.txt
+git checkout -- undo.txt
+cat undo.txt
+
+
+TRYING REVERT AND RESET:
+
+echo "This is a new change" >> undo.txt
+git add undo.txt
+git commit -m "fix: added a new change to undo.txt"
+
+———————————————————————————
+
+This is from my console: (command and output)
+ yogeshshamlin@Shamlins-MacBook-Air task-3 % git reset HEAD~1
+
+Unstaged changes after reset:
+M	task-3/undo.txt
+yogeshshamlin@Shamlins-MacBook-Air task-3 % git status
+On branch task-3-undo-changes
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   undo.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../.DS_Store
+	commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+yogeshshamlin@Shamlins-MacBook-Air task-3 % git reset --hard HEAD~1
+
+HEAD is now at 3d5c9c0 docs: Update README.md
+
+———————————————————————————
+
+git revert HEAD  ( opened vim and I used 	:q  to exit)
+
+MERGE BRANCHES:
+git checkout main
+git merge task-3-undo-changes
+git push origin main
