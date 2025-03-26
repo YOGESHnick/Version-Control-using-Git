@@ -1,2 +1,1 @@
-
-This is the final resolved version!
+This change is from task-4-merge-conflict
