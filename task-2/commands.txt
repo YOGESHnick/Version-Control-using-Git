@@ -1,0 +1,34 @@
+I was in new-feature branch:
+
+
+MAKING NEW FOLDER:
+
+mkdir task-2
+cd task-2
+
+touch .gitignore
+touch commands.txt
+
+
+WRITING TO .gitignore FILE, AVOIDS .log, nodemodules FOLDER AND .tmp FILES:
+
+echo -e "*.log\nnode_modules/\n*.tmp" > .gitignore
+
+echo "This is a log file" > debug.log
+echo "Important code" > script.js
+mkdir node_modules
+touch node_modules/package.json
+echo "Temporary file" > temp.tmp
+
+
+ADDING TO GIT:
+git status
+git add .
+git status
+git commit -m "feat: add .gitignore to exclude logs and temp files"
+
+BRANCH and MERGE:
+git push origin new-feature
+git checkout main
+git merge new-feature
+git push origin main
