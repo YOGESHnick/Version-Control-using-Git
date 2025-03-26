@@ -1,0 +1,27 @@
+mkdir task-4       
+cd task-4 
+
+  
+CREATING THE FILE:
+touch conflict.txt
+echo "Initial content" > conflict.txt
+
+git add conflict.txt
+git commit -m "feat: Add initial conflict.txt"
+
+  
+NEW BRANCH:
+git checkout -b task-4-conflict
+
+echo "Task-4-conflict modification" > conflict.txt
+git add conflict.txt
+git commit -m "feat: Modify conflict.txt in task-4-conflict"
+git push origin task-4-conflict
+
+  
+RESOLVE CONFLICTS DURING MERGE:
+git checkout main
+git merge task-4-conflict
+(vim editor was opened)
+git add conflict.txt
+git commit -m "fix: Resolve merge conflict in conflict.txt"
