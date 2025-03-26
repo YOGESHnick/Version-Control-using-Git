@@ -1,0 +1,32 @@
+git init
+
+ADDING THE GITHUB REPO IN REMOTE:
+git remote add origin https://github.com/YOGESHnick/Version-Control-using-Git.git
+
+MAKING NEW FOLDER:
+mkdir task-1
+cd task-1
+
+BASE FILE:
+echo "This is the base file" > base-file.txt
+git add base-file.txt
+git commit -m "feat: add base file"
+
+touch commands.txt
+git add commands.txt 
+git commit -m "feat: add commands file"
+
+NEW BRANCH:
+git checkout -b new-feature
+echo "Adding new feature" >> base-file.txt    ( >>  is used to append to the file )
+git add base-file.txt
+git commit -m "feat: update base file with new feature"
+
+PUSHING ALL BRANCHES TO REMOTE:
+git push origin main
+git push -u origin new-feature
+
+MERGE AND PUSH CHANGES:
+git checkout main
+git merge new-feature
+git push origin main
