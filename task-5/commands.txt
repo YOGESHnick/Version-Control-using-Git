@@ -1,0 +1,35 @@
+mkdir task-5
+cd task-5
+
+  
+SETTING BASE COMMITS:
+  
+touch numbers.txt
+echo "1" > numbers.txt
+git add numbers.txt
+git commit -m "feat: Add number 1"
+
+echo "2" >> numbers.txt
+git add numbers.txt
+git commit -m "feat: Add number 2"
+
+echo "3" >> numbers.txt
+git add numbers.txt
+git commit -m "feat: Add number 3"
+
+echo "4" >> numbers.txt
+git add numbers.txt
+git commit -m "fix: Add number 4 (typo fix)"
+
+
+USING INTERACTIVE REBASE : 
+git rebase -i HEAD~4
+
+(vim editor was opened, and commits for 2,3 and 4 were squashed)
+Squashing: mergin mulitple small commits into a single commit, thus cleaning up the git commit history
+
+PUSHING NEW BRANCH TO GITHUB, AND MERGIN TO MAIN BARANCH:
+git push origin task-5
+git checkout main
+git merge task-5
+git push origin main
