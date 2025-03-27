@@ -1,0 +1,38 @@
+NEW BRANCH:
+
+git checkout -b task-7
+mkdir task-7
+cd task-7
+
+touch cherry-pick.txt
+echo "Task-7 initial content" > cherry-pick.txt
+git add cherry-pick.txt
+git commit -m "feat: Add initial cherry-pick.txt"
+
+
+FEATURE-BRANCH WORKS:
+
+git checkout -b feature-branch
+echo "Feature branch content" > feature-file.txt
+
+git add feature-file.txt
+git commit -m "feat: Add feature-file.txt in feature-branch"
+
+
+CHERRY-PICKING:
+
+git log
+git log --oneline
+git checkout task-7
+git cherry-pick 818154f
+
+git add .
+git commit -m"feat: cherry-picked from feature-branch"
+
+
+PUSHING CHANGES TO GITHUB:
+
+git push origin task-7
+git checkout main
+git merge task-7
+git push origin main
