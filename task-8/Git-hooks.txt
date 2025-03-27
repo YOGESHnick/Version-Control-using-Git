@@ -1,0 +1,13 @@
+Git Hooks:
+Git Hooks are custom scripts that Git runs automatically at certain events like pre-commit, post-commit, etc.
+
+Uses:
+- Ensures code quality by running linters before committing. 
+- Prevents commits if tests fail.
+- Automates repetitive checks to reduce errors.
+
+
+Why use of hooks is suggested? 
+- Prevents bad commits (e.g., syntax errors, missing semicolons)
+- Maintains consistency across team projects
+- Reduces manual checks and enforces best practices automatically
