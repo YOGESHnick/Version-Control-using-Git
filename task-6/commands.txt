@@ -1,0 +1,39 @@
+git checkout -b task-6
+mkdir task-6
+cd task-6
+
+echo "Initial content" > stash-example.txt
+git add stash-example.txt
+git commit -m "feat: Add initial stash-example.txt"
+
+echo "Uncommitted changes - Task in progress" >> stash-example.txt
+cat stash-example.txt
+
+git stash
+
+git stash list
+
+
+WORKING IN MAIN BRANCH:
+
+git checkout main
+echo "Work on main branch" > main-work.txt
+git add main-work.txt
+git commit -m "feat: Work on main branch"
+
+
+TASK-6 BRANCH, POP:
+
+git checkout task-6
+git stash pop
+cat stash-example.txt
+
+git add .
+git commit -m"feat: stash pop content"
+
+
+PUSHING CHANGES TO GITHUB:
+git push origin task-6
+git checkout main
+git merge task-6
+git push origin main
